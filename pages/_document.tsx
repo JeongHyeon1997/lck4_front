@@ -103,24 +103,6 @@ class MyDocument extends Document {
             sizes="16x16"
             href="/images/favicon-16x16.png"
           />
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-          />
-          <script
-            id="google-analytics"
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-              cookie_flags: 'max-age=7200;secure;samesite=none',
-            });
-          `,
-            }}
-          />
           <link rel="manifest" href="/images/manifest.json" />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta
