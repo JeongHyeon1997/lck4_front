@@ -94,7 +94,7 @@ export const RecordDetails = styled(NextUIRow)``;
 export const RecordFirstTeam = styled(NextUICol)<
   styledInterface["styledInterface"]
 >`
-  opacity: ${(props) => (props.win ? "1" : "0.3")};
+  opacity: ${(props) => (props.win === "true" ? "1" : "0.3")};
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
@@ -104,7 +104,7 @@ export const RecordFirstTeam = styled(NextUICol)<
 export const RecordFirstTeamScore = styled(NextUICol)<
   styledInterface["styledInterface"]
 >`
-  opacity: ${(props) => (props.win ? "1" : "0.3")};
+  opacity: ${(props) => (props.win === "true" ? "1" : "0.3")};
   width: auto;
   font-weight: 700;
 `;
@@ -117,7 +117,7 @@ export const RecordColon = styled(NextUICol)`
 export const RecordSecondTeamScore = styled(NextUICol)<
   styledInterface["styledInterface"]
 >`
-  opacity: ${(props) => (props.win ? "1" : "0.3")};
+  opacity: ${(props) => (props.win === "true" ? "1" : "0.3")};
   width: auto;
   font-weight: 700;
 `;
@@ -125,7 +125,7 @@ export const RecordSecondTeamScore = styled(NextUICol)<
 export const RecordSecondTeam = styled(NextUICol)<
   styledInterface["styledInterface"]
 >`
-  opacity: ${(props) => (props.win ? "1" : "0.3")};
+  opacity: ${(props) => (props.win === "true" ? "1" : "0.3")};
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;

@@ -10,6 +10,6 @@ export interface Record {
 
 export interface styledInterface {
   styledInterface: {
-    win: boolean;
+    win: string;
   };
 }

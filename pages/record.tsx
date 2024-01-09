@@ -19,6 +19,7 @@ import { Record } from "@/utils/dataType";
 import { Row } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { getRecord } from "./api/getRecord";
+import { postUserName } from "./api/postUserName";
 
 const record = () => {
   const [year, setYear] = useState<Number>(0);
@@ -31,21 +32,11 @@ const record = () => {
     setYear(today.getFullYear());
     setMonth(today.getMonth() + 1);
     setDate(today.getDate());
+
+    getRecord(year, month).then((res) => {
+      setRecord(res);
+    });
   }, []);
-
-  useEffect(() => {
-    const fetchRecord = async () => {
-      try {
-        const result = await getRecord(year, month);
-        console.log(result);
-        setRecord(result);
-      } catch (error) {
-        console.error("Error fetching record:", error);
-      }
-    };
-
-    fetchRecord();
-  }, [year, month]);
 
   return (
     <Layout>
@@ -78,21 +69,25 @@ const record = () => {
               </RecordTimeAndState>
 
               <RecordDetails>
-                <RecordFirstTeam win={data.firstTeamWin > data.secondTeamWin}>
+                <RecordFirstTeam
+                  win={(data.firstTeamWin > data.secondTeamWin).toString()}
+                >
                   {data.firstTeam}
                 </RecordFirstTeam>
                 <RecordFirstTeamScore
-                  win={data.firstTeamWin > data.secondTeamWin}
+                  win={(data.firstTeamWin > data.secondTeamWin).toString()}
                 >
                   {data.firstTeamWin}
                 </RecordFirstTeamScore>
                 <RecordColon>:</RecordColon>
                 <RecordSecondTeamScore
-                  win={data.firstTeamWin > data.secondTeamWin}
+                  win={(data.firstTeamWin > data.secondTeamWin).toString()}
                 >
                   {data.secondTeamWin}
                 </RecordSecondTeamScore>
-                <RecordSecondTeam win={data.firstTeamWin > data.secondTeamWin}>
+                <RecordSecondTeam
+                  win={(data.firstTeamWin > data.secondTeamWin).toString()}
+                >
                   {data.secondTeam}
                 </RecordSecondTeam>
               </RecordDetails>
