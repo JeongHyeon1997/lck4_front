@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { styledInterface } from "@/utils/dataType";
-import { Col as NextUICol } from "@nextui-org/react";
+import { Button, Col as NextUICol } from "@nextui-org/react";
 import { Row as NextUIRow } from "@nextui-org/react";
 
 export const Years = styled(NextUICol)`
@@ -130,4 +130,10 @@ export const RecordSecondTeam = styled(NextUICol)<
   font-weight: 700;
   line-height: 20px;
   text-align: center;
+`;
+
+export const ArrowButton = styled(Button)`
+  width: 20px;
+  background: transparent;
+  min-width: auto;
 `;
