@@ -39,6 +39,14 @@ const record = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (year !== 0 && month !== 0) {
+      getRecord(year, month).then((res) => {
+        setRecord(res);
+      });
+    }
+  }, [year, month]);
+
   return (
     <Layout>
       <Years>
@@ -74,7 +82,8 @@ const record = () => {
           </Month>
         ))}
       </MonthContainer>
-      {record ? (
+
+      {record && record?.length > 0 ? (
         record.map((data, i) => {
           const startData = data.startDate.match(/(\d{2}\.\d{2}\([^)]+\))/);
           return (
