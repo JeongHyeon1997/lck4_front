@@ -30,7 +30,7 @@
     "@types/node": "^20.4.6",
     "@types/react": "^18.2.18",
     "@types/styled-components": "^5.1.26",
-    "axios": "^1.4.0",
+    "axios": "^1.6.5",
     "env-cmd": "^10.1.0",
     "eslint": "^8.41.0",
     "eslint-config-next": "^13.4.4",

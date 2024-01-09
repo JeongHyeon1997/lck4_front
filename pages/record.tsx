@@ -31,9 +31,21 @@ const record = () => {
     setYear(today.getFullYear());
     setMonth(today.getMonth() + 1);
     setDate(today.getDate());
-
-    setRecord(getRecord(year, month));
   }, []);
+
+  useEffect(() => {
+    const fetchRecord = async () => {
+      try {
+        const result = await getRecord(year, month);
+        console.log(result);
+        setRecord(result);
+      } catch (error) {
+        console.error("Error fetching record:", error);
+      }
+    };
+
+    fetchRecord();
+  }, [year, month]);
 
   return (
     <Layout>
@@ -44,7 +56,7 @@ const record = () => {
             key={index + 1}
             style={{
               borderBottom:
-                month === index + 1 ? "solid 4px rgb(198, 243, 0)" : "",
+                month === index + 1 ? "solid 4px rgb(198, 243, 0)" : "0px",
             }}
             onClick={() => {
               setMonth(index + 1);

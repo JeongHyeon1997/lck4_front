@@ -61,16 +61,4 @@ module.exports = {
   lessLoaderOptions: {
     javascriptEnabled: true,
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://search.naver.com/:path*",
-      },
-      {
-        source: "/api2/:path*",
-        destination: "https://www.google.com/:path*",
-      },
-    ];
-  },
 };
