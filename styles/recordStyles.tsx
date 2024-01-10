@@ -19,6 +19,15 @@ export const Month = styled(NextUICol)`
   align-items: center;
   cursor: pointer;
   float: none;
+  font-size: 15px;
+
+  @media (max-width: 360px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 361px) and (max-width: 430px) {
+    font-size: 14px;
+  }
 `;
 
 export const MonthContainer = styled(NextUIRow)`
@@ -31,6 +40,10 @@ export const MonthContainer = styled(NextUIRow)`
   padding: 0 15px;
   float: none;
   margin-bottom: 15px;
+
+  @media (max-width: 360px) {
+    padding: 0 10px;
+  }
 `;
 
 export const RecordContainer = styled(NextUICol)`
@@ -136,4 +149,11 @@ export const ArrowButton = styled(Button)`
   width: 20px;
   background: transparent;
   min-width: auto;
+`;
+
+export const NotInfo = styled(NextUICol)`
+  float: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

@@ -20,15 +20,8 @@ export const Divider = styled.div`
   width: 1px;
 `;
 
-export const Title = styled.div`
-  font-size: 14px;
-  line-height: 100%;
-  color: #ffffff;
-  cursor: pointer;
-`;
-
 export const Nav = styled.div`
-  font-size: 14px;
+  font-size: 15px;
   line-height: 100%;
   color: #ffffff;
   cursor: pointer;

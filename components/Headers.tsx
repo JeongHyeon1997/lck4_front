@@ -1,4 +1,4 @@
-import { Body, Divider, Nav, Title, Login } from "@/styles/headersStyles";
+import { Body, Divider, Nav, Login } from "@/styles/headersStyles";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -12,7 +12,7 @@ const Headers = () => {
 
   return (
     <Body>
-      <Title
+      <Nav
         style={{ fontWeight: location == "/" ? "700" : "400" }}
         onClick={() => {
           if (location !== "/") {
@@ -21,7 +21,7 @@ const Headers = () => {
         }}
       >
         LCK 4
-      </Title>
+      </Nav>
       <Divider />
       <Nav
         style={{ fontWeight: location == "/plan" ? "700" : "400" }}

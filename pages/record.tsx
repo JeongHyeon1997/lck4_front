@@ -15,18 +15,25 @@ import {
   RecordSecondTeamScore,
   RecordSecondTeam,
   ArrowButton,
+  NotInfo,
 } from "@/styles/recordStyles";
 import { Record } from "@/utils/dataType";
 import { Row } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { getRecord } from "./api/getRecord";
-import { postUserName } from "./api/postUserName";
 
 const record = () => {
   const [year, setYear] = useState<number>(0);
   const [month, setMonth] = useState<number>(0);
   const [date, setDate] = useState<number>(0);
   const [record, setRecord] = useState<Record[]>();
+
+  const settings = {
+    slidesToShow: 3, // 한 번에 보여질 슬라이드 수
+    slidesToScroll: 1, // 한 번에 스크롤할 슬라이드 수
+    infinite: false, // 무한 스와이프 비활성화
+    swipeToSlide: true, // 스와이프로 슬라이드 이동 활성화
+  };
 
   useEffect(() => {
     const today = new Date();
@@ -124,7 +131,7 @@ const record = () => {
           );
         })
       ) : (
-        <>정보가 없습니다.</>
+        <NotInfo>해당 날짜에 정보가 없습니다.</NotInfo>
       )}
     </Layout>
   );
