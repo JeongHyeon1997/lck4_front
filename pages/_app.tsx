@@ -8,6 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <Head>
+        <title>LCK 4부 리그</title>
         <meta property="og:type" content="website" />
         <meta name="url" property="og:url" content={"https://www.lck4.lol"} />
         <meta name="title" property="og:title" content={"LCK 4부리그"} />
