@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import { Card } from "@/styles/homeStyles";
 import { userList } from "@/utils/dataType";
 import { Table } from "@nextui-org/react";
 import { useEffect, useState } from "react";

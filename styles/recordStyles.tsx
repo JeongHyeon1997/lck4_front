@@ -52,6 +52,7 @@ export const RecordContainer = styled(NextUICol)`
   padding: 10px 0;
   margin-bottom: 10px;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 export const RecordDate = styled(NextUICol)`

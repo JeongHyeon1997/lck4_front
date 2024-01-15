@@ -19,6 +19,7 @@ import {
 } from "@/styles/recordStyles";
 import { Record } from "@/utils/dataType";
 import { Row } from "@nextui-org/react";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getRecord } from "./api/getRecord";
 
@@ -27,13 +28,7 @@ const record = () => {
   const [month, setMonth] = useState<number>(0);
   const [date, setDate] = useState<number>(0);
   const [record, setRecord] = useState<Record[]>();
-
-  const settings = {
-    slidesToShow: 3, // 한 번에 보여질 슬라이드 수
-    slidesToScroll: 1, // 한 번에 스크롤할 슬라이드 수
-    infinite: false, // 무한 스와이프 비활성화
-    swipeToSlide: true, // 스와이프로 슬라이드 이동 활성화
-  };
+  const router = useRouter();
 
   useEffect(() => {
     const today = new Date();
@@ -94,7 +89,12 @@ const record = () => {
         record.map((data, i) => {
           const startData = data.startDate.match(/(\d{2}\.\d{2}\([^)]+\))/);
           return (
-            <RecordContainer key={i}>
+            <RecordContainer
+              key={i}
+              onClick={() => {
+                router.push(`/${data.id}`);
+              }}
+            >
               <RecordDate>{startData && startData[1]}</RecordDate>
 
               <Row style={{ alignItems: "center" }}>
@@ -105,6 +105,9 @@ const record = () => {
 
                 <RecordDetails>
                   <RecordFirstTeam
+                    onClick={() => {
+                      console.log(data.firstTeam);
+                    }}
                     win={(data.firstTeamWin > data.secondTeamWin).toString()}
                   >
                     {data.firstTeam}

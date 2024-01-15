@@ -1,4 +1,5 @@
 export interface Record {
+  id: number;
   firstTeam: string;
   firstTeamWin: number;
   secondTeam: string;
