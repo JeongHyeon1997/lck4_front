@@ -58,3 +58,12 @@ export const Win = styled(NextUICol)`
   background-color: rgb(0, 0, 0);
   margin: 0 30px;
 `;
+
+export const Details = styled.h3`
+  font-size: 16px;
+  line-height: 24px;
+  font-family: gmarket, sans-serif;
+  margin-top: 64px;
+  margin-bottom: 44px;
+  font-weight: 900;
+`;

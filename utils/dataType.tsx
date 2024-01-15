@@ -9,6 +9,18 @@ export interface Record {
   startTime: string;
 }
 
+export interface Match {
+  id: number;
+  fristTeamUserName: string;
+  fristTeamUserChampion: string;
+  fristTeamUserMVP: string;
+  secondTeamUserName: string;
+  secondTeamChampion: string;
+  secondTeamUserMVP: string;
+  Line: string;
+  CreateDate: string;
+}
+
 export interface styledInterface {
   styledInterface: {
     win: string;
