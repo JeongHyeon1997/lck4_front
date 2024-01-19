@@ -1,8 +1,8 @@
 import { Modal, Button, Text, Input, Row } from "@nextui-org/react";
 import { useState } from "react";
-import { Mail } from "./Mail";
 import { Password } from "./Password";
 import JoinModal from "./JoinModal";
+import { Mail } from "./Mail";
 
 const LoginModal = (props: any) => {
   const [visible, setVisible] = useState<boolean>(false);

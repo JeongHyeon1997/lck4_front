@@ -1,6 +1,10 @@
 import { postUserName } from "@/pages/api/postUserName";
 
-export const onJoin = async (userName: string, password: string) => {
+export const onJoin = async (
+  userName: string,
+  tag: string,
+  password: string
+) => {
   try {
     if (userName.length < 1) {
       return "userName is null";
@@ -8,7 +12,7 @@ export const onJoin = async (userName: string, password: string) => {
     if (password.length < 1) {
       return "password is null";
     }
-    const res = await postUserName(userName, password);
+    const res = await postUserName(userName, tag, password);
 
     if (res.status === 200) {
       return "success";
