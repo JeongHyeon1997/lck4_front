@@ -61,9 +61,44 @@ export const Win = styled(NextUICol)`
 
 export const Details = styled.h3`
   font-size: 16px;
-  line-height: 24px;
+  line-height: 36px;
   font-family: gmarket, sans-serif;
   margin-top: 64px;
-  margin-bottom: 44px;
+  margin-bottom: 0px;
   font-weight: 900;
+`;
+
+export const Info = styled.div`
+  font-size: 12px;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 8px;
+  font-weight: 500;
+`;
+
+export const MvpSpan = styled.span`
+  color: #ffd700;
+`;
+
+export const UserName = styled(NextUICol)<styledInterface["styledInterface"]>`
+  float: none;
+  text-align: center;
+  color: ${(props) => (props.mvp === "Y" ? "#ffd700" : "#ffffff")};
+  font-weight: ${(props) => (props.mvp === "Y" ? "700" : "400")};
+`;
+
+export const LineImage = styled.img`
+  margin: 0 20px;
+`;
+
+export const LineUpRow = styled(NextUIRow)`
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  margin-top: 3px;
+  padding: 17.5px 20px;
+  background-color: #333339;
+  border: solid 1px #29292e;
+  border-radius: 10px;
+  color: white;
 `;

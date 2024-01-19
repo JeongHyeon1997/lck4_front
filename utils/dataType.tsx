@@ -23,7 +23,8 @@ export interface Match {
 
 export interface styledInterface {
   styledInterface: {
-    win: string;
+    win?: string;
+    mvp?: string;
   };
 }
 
