@@ -33,11 +33,11 @@ const Headers = () => {
         <Divider />
         <Nav
           style={{
-            fontWeight: location == "/plan" ? "700" : "400",
+            fontWeight: location == "/fame" ? "700" : "400",
           }}
           onClick={() => {
-            if (location !== "/plan") {
-              router.push("/plan");
+            if (location !== "/fame") {
+              router.push("/fame");
             }
           }}
         >
