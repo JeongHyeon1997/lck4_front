@@ -33,8 +33,7 @@ const Headers = () => {
         <Divider />
         <Nav
           style={{
-            fontWeight:
-              location == "/plan" || location == "/[id]" ? "700" : "400",
+            fontWeight: location == "/plan" ? "700" : "400",
           }}
           onClick={() => {
             if (location !== "/plan") {
@@ -46,7 +45,10 @@ const Headers = () => {
         </Nav>
         <Divider />
         <Nav
-          style={{ fontWeight: location == "/record" ? "700" : "400" }}
+          style={{
+            fontWeight:
+              location == "/record" || location == "/[id]" ? "700" : "400",
+          }}
           onClick={() => {
             if (location !== "/record") {
               router.push("/record");
