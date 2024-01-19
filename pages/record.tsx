@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import { Loading } from "@/components/Loading";
 import {
   Month,
   MonthContainer,
@@ -29,7 +28,6 @@ const record = () => {
   const [month, setMonth] = useState<number>(0);
   const [date, setDate] = useState<number>(0);
   const [record, setRecord] = useState<Record[]>();
-  const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -39,9 +37,7 @@ const record = () => {
     setDate(today.getDate());
 
     getRecord(today.getFullYear(), today.getMonth() + 1).then((res) => {
-      setLoading(true);
       setRecord(res);
-      setLoading(false);
     });
   }, []);
 
@@ -140,7 +136,6 @@ const record = () => {
       ) : (
         <NotInfo>해당 날짜에 정보가 없습니다.</NotInfo>
       )}
-      {loading && <Loading />}
     </Layout>
   );
 };
